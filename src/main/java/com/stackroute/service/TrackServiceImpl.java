@@ -35,26 +35,24 @@ TrackRepository trackRepository;
 
     @Override
     public Track getTrackById(int id) {
-        return null;
+        Track getTrackById = trackRepository.findById(id).get();
+        return getTrackById;
     }
 
     @Override
-    public List<Track> getAllTracks() {
+    public List<Track> getAllTracks()
+    {
+        List<Track> getAllTracks = trackRepository.findAll();
         return trackRepository.findAll();
-    }
-
-    @Override
-    public Track savedtrack(TrackService trackService) {
-        return null;
     }
 
     @Override
     public Optional<Track> deleteTrackById(int id) {
         Optional<Track> optional = trackRepository.findById(id);
-        trackRepository.deleteById(id);
         if (optional.isPresent()) {
-
+            trackRepository.deleteById(id);
         }
+        
         return optional;
 
     }
