@@ -1,6 +1,4 @@
 package com.stackroute.service;
-
-
 import com.stackroute.domain.Track;
 import com.stackroute.repository.TrackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +50,7 @@ TrackRepository trackRepository;
         if (optional.isPresent()) {
             trackRepository.deleteById(id);
         }
-        
+
         return optional;
 
     }
