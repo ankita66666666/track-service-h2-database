@@ -21,13 +21,16 @@ TrackRepository trackRepository;
 
     @Override
     public Track saveTrack(Track track) {
-        return null;
+        Track savedTrack = trackRepository.save(track);
+        return savedTrack;
     }
 
 
     @Override
-    public Track updateTrack(Track track) {
-        return null;
+    public Track updateTrack(int id,Track track) {
+        Track updateTrack = trackRepository.findById(id).get();
+        updateTrack.setComments(track.getComments());
+        return updateTrack;
     }
 
     @Override

@@ -14,7 +14,7 @@ import javax.persistence.Id;
         public Track() {
         }
 
-        public Track(int id, String name, int age) {
+        public Track(int id, String name, String comments) {
             this.id = id;
             this.name = name;
             this.comments = comments;
@@ -41,7 +41,7 @@ import javax.persistence.Id;
             return comments;
         }
 
-        public void setComments(int age) {
+        public void setComments(String comments) {
             this.comments = comments;
         }
 

@@ -16,8 +16,8 @@ import java.util.Optional;
 public class TrackController {
     private TrackService trackService;
 
-    public TrackController() {
-    }
+//    public TrackController() {
+//    }
 
     @Autowired
     public TrackController(TrackService trackService) {
@@ -26,7 +26,7 @@ public class TrackController {
 
     @PostMapping("track")
     public ResponseEntity<?> saveTrack(@RequestBody Track track) {
-        Track savedTrack = trackService.savedtrack(trackService);
+        Track savedTrack = trackService.saveTrack(track);
         return new ResponseEntity<>(savedTrack, HttpStatus.OK);
     }
 
@@ -40,7 +40,7 @@ public class TrackController {
     }
 
     @DeleteMapping("track/{id}")
-    public ResponseEntity<?> deleteTrackrById(@PathVariable("id") int id) {
+    public ResponseEntity<?> deleteTrackById(@PathVariable("id") int id) {
         Optional<Track> tracksList = (Optional<Track>) trackService.deleteTrackById(id);
         return new ResponseEntity<>(tracksList, HttpStatus.OK);
     }
